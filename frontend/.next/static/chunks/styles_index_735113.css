@@ -1,0 +1,101 @@
+/* [project]/styles/index.css [client] (css) */
+.home-container- {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+.home-title- {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.item-list- {
+  width: 100%;
+  max-width: 800px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.item-card- {
+  perspective: 1000px;
+}
+
+.item-card-inner- {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform .6s;
+}
+
+.item-card-:hover .item-card-inner- {
+  transform: rotateY(180deg);
+}
+
+.item-card-front-, .item-card-back- {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: .5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px #0000001a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow .3s;
+}
+
+.item-card-front- {
+  background-color: #fff;
+}
+
+.item-card-front-:hover {
+  box-shadow: 0 8px 12px #0003;
+}
+
+.item-card-back- {
+  background-color: #f8f8f8;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.item-name- {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  color: #1f2937;
+}
+
+.item-description- {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: .5rem;
+}
+
+.item-price- {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.item-id- {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/*# sourceMappingURL=styles_index_735113.css.map*/
