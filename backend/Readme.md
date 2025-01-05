@@ -1,13 +1,68 @@
+
 # Item Services Application
 
 ## Overview
 
-This application is a Spring Boot service using MongoDB as its database. The application can be containerized using Docker for seamless deployment.
+This application is a Spring Boot service that uses MongoDB as its database. It can be containerized using Docker for seamless deployment.
 
 ---
 
-## Dockerfile
+## Prerequisites
 
+Before running this application, ensure the following tools are installed on your local machine:
+
+1. **Java 18** - Required to build and run the Spring Boot application.
+2. **Docker** - Used for containerizing and running the application.
+
+Verify Docker is running using:
+```bash
+docker info
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/aad4000/Item_Services.git
+cd Item_Services/backend
+```
+
+### 2. Add the `.env` File
+
+Create a `.env` file in the root of the `backend` folder with the following content:
+
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/itemdb?retryWrites=true&w=majority
+SPRING_SECURITY_USER_NAME=admin
+SPRING_SECURITY_USER_PASSWORD=admin123
+```
+
+Replace `<username>` and `<password>` with your MongoDB credentials.
+
+---
+
+## Building and Running the Application
+
+### Build the Application
+
+Use Gradle to build the application and create a JAR file:
+
+```bash
+./gradlew clean build -x test
+```
+
+This command generates a JAR file in the `build/libs/` directory.
+
+---
+
+## Docker Setup
+
+### Dockerfile
+
+Below is the `Dockerfile` used to containerize the application:
 
 ```dockerfile
 # Use a lightweight OpenJDK image
@@ -26,51 +81,17 @@ EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
 ```
 
----
+### Build the Docker Image
 
-## Building and Running the Docker Image
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/aad4000/Item_Services.git
-cd Item_Services
-
-```
-
-### 2. Build the Application
-
-Use Gradle to create the JAR file:
-
-```bash
-./gradlew clean build -x test
-```
-
-This command generates a JAR file in the `build/libs/` directory.
-
-### 3. Create the `.env` File
-
-Create a `.env` file in the project root with the following content:
-
-```env
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/itemdb?retryWrites=true&w=majority
-SPRING_SECURITY_USER_NAME=admin
-SPRING_SECURITY_USER_PASSWORD=admin123
-```
-
-Replace `<username>` and `<password>` with your MongoDB credentials.
-
-### 4. Build the Docker Image
-
-Run the following command to build the Docker image:
+To build the Docker image, run:
 
 ```bash
 docker build -t item-services:latest .
 ```
 
-### 5. Run the Docker Container
+### Run the Docker Container
 
-Start a container using the image:
+To start the container, use:
 
 ```bash
 docker run -p 8080:8080 --env-file .env --name item-services item-services:latest
@@ -133,7 +154,7 @@ http://localhost:8080
 
 ---
 
-## Stopping and Removing the Docker Container
+## Stopping and Removing Docker Resources
 
 ### 1. Stop the Container:
 
@@ -157,10 +178,12 @@ docker rmi item-services:latest
 
 ## Troubleshooting
 
-- **Port Conflicts**: Ensure port 8080 is not being used by another application.
+### Common Issues
+
+- **Port Conflicts**: Ensure port `8080` is not being used by another application.
+- **Docker Setup**: Verify Docker is running properly on your desktop.
 - **Environment Variables**: Double-check the `.env` file for typos or missing variables.
 
 ---
 
----
-
+Feel free to reach out if you encounter any issues or need further assistance!

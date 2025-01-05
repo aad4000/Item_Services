@@ -24,6 +24,22 @@
       "static/chunks/[root of the server]__0e64bf._.js",
       "static/chunks/pages_index_5771e1._.js",
       "static/chunks/pages_index_a6d07b._.js"
+    ],
+    "/items/[id]": [
+      "static/chunks/node_modules_next_0f88d9._.js",
+      "static/chunks/node_modules_react-dom_82bb97._.js",
+      "static/chunks/node_modules_7ae8b2._.js",
+      "static/chunks/[root of the server]__532af4._.js",
+      "static/chunks/pages_items_[id]_5771e1.js",
+      "static/chunks/pages_items_[id]_444966.js"
+    ],
+    "/add-item": [
+      "static/chunks/node_modules_next_0f88d9._.js",
+      "static/chunks/node_modules_react-dom_82bb97._.js",
+      "static/chunks/node_modules_7ae8b2._.js",
+      "static/chunks/[root of the server]__976237._.js",
+      "static/chunks/pages_add-item_5771e1._.js",
+      "static/chunks/pages_add-item_3562a7._.js"
     ]
   },
   "devFiles": [],
