@@ -1,4 +1,4 @@
-package com.example.item_services.exception;
+package com.example.item_services.exceptions;
 
 import java.util.HashMap;
 import java.util.Map;

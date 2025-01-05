@@ -1,4 +1,4 @@
-package com.example.item_services.model;
+package com.example.item_services.models;
 
 
 import jakarta.validation.constraints.NotEmpty;

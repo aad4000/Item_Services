@@ -1,4 +1,4 @@
-package com.example.item_services.config;
+package com.example.item_services.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
